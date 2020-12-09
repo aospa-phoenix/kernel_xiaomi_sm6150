@@ -212,12 +212,18 @@
 	qcom,s3-entry-ibat-ua = <25000>;
 	qcom,s3-exit-ibat-ua = <45000>;
 	qcom,qg-iterm-ma = <300>;
-	qcom,hold-soc-while-full;
-	qcom,linearize-soc;
 	qcom,cl-feedback-on;
 	qcom,qg-ext-sns;
-	qcom,tcss-enable;
 	qcom,shutdown-delay-enable;
+	/* Tweak SOC curve to be more linear and monotonic */
+	/* necessary for linearize-soc, like TCSS */
+	qcom,hold-soc-while-full;
+	/* scale MSOC with delta SOC after 100% */
+	qcom,linearize-soc;
+	/* scale SSOC with chg term current >= 90% to avoid jumps */
+	qcom,tcss-enable;
+	/* scale SSOC with BSOC to mitigate jumps */
+	qcom,bass-enable;
 };
 
 &pm6150_charger {
