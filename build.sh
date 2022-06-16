@@ -10,7 +10,7 @@ export ARCH="arm64"
 export KBUILD_BUILD_HOST="Requiem"
 export KBUILD_BUILD_USER="Rasenkai"
 
-PATH=/home/rasenkai/kernel/toolchain/azure-clang/bin/:$PATH
+PATH=/home/rasenkai/kernel/toolchain/neutron-clang/bin/:$PATH
 
 # Colors
 NC='\033[0m'
