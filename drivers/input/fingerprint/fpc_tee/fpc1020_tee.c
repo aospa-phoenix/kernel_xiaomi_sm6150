@@ -34,9 +34,6 @@
 #include <linux/interrupt.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
-#ifndef FPC_DRM_INTERFACE_WA
-#include <linux/msm_drm_notify.h>
-#endif
 #include <linux/mutex.h>
 #include <linux/of.h>
 #include <linux/of_gpio.h>
@@ -51,7 +48,6 @@
 #define FPC_GPIO_NO_DEFINED -2
 #define FPC_GPIO_REQUEST_FAIL -3
 #define FPC_TTW_HOLD_TIME 2000
-#define FP_UNLOCK_REJECTION_TIMEOUT (FPC_TTW_HOLD_TIME - 500)
 
 #define RESET_LOW_SLEEP_MIN_US 5000
 #define RESET_LOW_SLEEP_MAX_US (RESET_LOW_SLEEP_MIN_US + 100)
